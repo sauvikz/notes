@@ -1,0 +1,79 @@
+Steve Jobs: "Real artists ship"
+VCS: Version Control System
+GitHub: Repository hosting website
+
+One very useful command is "git help" and "git help command_name"
+Git was originally developed by Linux Creator: Linus Torvalds
+Mercurial, Perforce and Bazaar are other version control systems
+
+
+The easiest way to check for Git is to start a terminal window and use which at the command line to see if the git executable is already present:
+
+$ "which git"
+/usr/local/bin/git
+
+"git config user.name" and "git config user.email" shows you the git username and email respectively
+
+git config --global user.name "Sauvik Dutta"
+git config --global user.email sauvikz@gmail.com
+
+"vim ~/.gitconfig" to confirm this; Remember this always stays in your home directory ie. /Users/sauvikdutta/
+
+"git help add | less": You can use the pipe operator to see few lines at a time
+
+"git init" will initialize the directory and store information to track changes in a special hidden file
+
+"cat file_name" will dump the contents of a file on to the screen
+
+"git add -A": will add all untracked files
+"git add .": will add all untracked files of the current directory
+
+Four states of git:
+
+"Untracked/Unstaged" -> git add -> "Staged" -> git commit -> "Local Repository" -> git push -> "Remote Repository"
+
+"touch filename" will create empty file
+"git status"
+"git commit -m "message""
+
+"git log": metadata including commit hash; Hash is often referred to as "SHA" meaning Secure Hash Algorithm
+
+echo "Hello World" > index.html will dump the output of echo "Hello World" on to index.html
+
+git commit -a: Means commit *all* tracked changes in all the files of your repository. For the files that are untracked you'll have to first "git add" them
+
+To see the difference between staged changes and the previous version of the repo, use git diff --staged
+
+To amend the last commit message: "git commit --amend"
+
+"git show <SHA>" shows you the relevant information with a particular commit
+
+"git diff" will show you the differential view
+
+"git log -p" gives you detailed logs
+
+[website (master)]$ git remote add origin https://github.com/<name>/website.git
+[website (master)]$ git push -u origin master
+
+The "-u" option to git push sets GitHub as the upstream repository, which means we’ll be able to download any changes automatically when we run "git pull"
+
+"git checkout -b branch_name"
+
+These things can be added to .gitignore:
+- file_name
+- regex so for example *~ shows that any file that has tilde in it's filename will be ignored (for eg. tmp files)
+- tmp/ will ignore the entire tmp/ directory
+
+"git diff branch1 branch2" will show you the differences between the branches
+
+Go to master and do "git merge branch_name". This will merge all branches on to master.
+
+If you are in master and have not *merged* a branch and you try doing "git branch -d branch", this won't
+work as Git doesn't work that way. In such cases, "git branch -D branch" should work if you want to
+delete branches that have not been merged.
+
+"git checkout -f" or "git checkout --force" will force Git to checkout HEAD (the last state of commit)
+
+"git checkout <SHA>" will go to that particular commit!
+
+"git clone <clone-url> directory-name"
