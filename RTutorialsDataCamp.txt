@@ -9,7 +9,7 @@ Boolean values (TRUE or FALSE) are called "logical".
 Text (or string) values are called "characters"
 
 As opposed to Python which used type() to get the data-type of an object, R uses class() to do the same.
-R equivalent of Python lists is Vectors which can again store any data type (including a mixture of data types)
+R equivalent of Python lists is Vectors which can again store any data type (but the same data-type within a Vector, similar to Numpy arrays)
 In R, you create vectors with the combine function denoted by c()
 For example: numeric_vector <- c(1,2,3)
 character_vector <- c("a", "b", "c")
@@ -54,3 +54,44 @@ Similarly, rbind() can be used to bind rows to matrices. example: rbind(matrix1,
 Matrix subsetting is similar to 2-d Lists subsetting in Python (except matrix[,2] in R instead of matrix[:,2] in Python)
 Similar to Vectors, Matrices operate element-wise, so M1 * M2, will multiply the two matrices element-wise
 For matrix multiplication, you can use M1 %*% M2!
+
+Factors in R:
+The term factor refers to a statistical data type used to store categorical variables.
+gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+factor_gender_vector <- factor(gender_vector)
+There are two types of categorical variables: a nominal categorical variable and an ordinal categorical variable.
+
+Ordinal Categorical Variables can be introduced by:
+temperature_vector <- c("High", "Low", "High","Low", "Medium")
+temperature_vector_factor <- factor(temperature_vector, order=TRUE, levels=c("Low","Medium","High"))
+
+Factor Levels:
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+# Specify the levels of factor_survey_vector
+levels(factor_survey_vector) <- c("Female","Male")
+summary(variable) is equivalent to Pandas' value_counts() method
+
+Dataframes in R:
+Remember that R Matrices can only contain data of one data-type. If you want a mixture of data-types, this is where Dataframes will come in handy
+data.frame(col1, col2, col3, ....)
+str(dataframe) for structure
+data_frame[,"column_name"] is the same as data_frame$column_name
+Dataframe subsetting: data_frame[Vector of Booleans, c(col1, col2, col3...)]
+This can also be done by the subset function!
+subset(data_frame, subset=some_condition)
+
+order() functions gives you the rank of elements in a Vector, for example:
+> a <- c(100, 10, 1000)
+> order(a)
+[1] 2 1 3
+a[order(a)] will reshuffle and *sort* the Vector
+The same logic can be used to reshuffle an entire dataframe!
+
+Lists in R:
+A list is some kind super data type: you can store practically any piece of information in it (Vectors, Matrices, Dataframes, Other Lists etc.)!
+You can name you list with the names() function or while creating the list: list(name1 = Vec1, name2 = Vec2, ...)
+To select from lists: list[[1]] or list[["name"]] or list$name
+You can add to a list simply by: ext_list <- c(my_list , my_val) where my_list is the old list and my_val is the new element you want to add.
+If you want to add a named element: ext_list <- c(my_list, name = my_val)
