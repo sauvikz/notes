@@ -1,0 +1,56 @@
+As opposed to Python, exponentiation in R is done by ^ and modulo by %%
+Assignment in R is done by <-
+Basic data types in R
+
+R works with numerous data types. Some of the most basic types to get started are:
+Decimals values like 4.5 are called "numerics".
+Natural numbers like 4 are called integers. Integers are also "numerics".
+Boolean values (TRUE or FALSE) are called "logical".
+Text (or string) values are called "characters"
+
+As opposed to Python which used type() to get the data-type of an object, R uses class() to do the same.
+R equivalent of Python lists is Vectors which can again store any data type (including a mixture of data types)
+In R, you create vectors with the combine function denoted by c()
+For example: numeric_vector <- c(1,2,3)
+character_vector <- c("a", "b", "c")
+1:9 is a schortcut for c(1:9)
+
+Vector indices can be *named* with the names() function so for example:
+poker_vector <- c(140, -50, 20, -120, 240)
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+and so poker_vector when executed will give you:
+Monday   Tuesday Wednesday  Thursday    Friday
+   140       -50        20      -120       240
+c(1, 2, 3) + c(4, 5, 6) will give you element-wise results!
+sum(vector) -> will give you the sum of the Vector
+mean(vector) -> will give you the average of the Vector
+if x > y, then x > y in R will give you TRUE
+
+As opposed to Python, indices in R begin with 1
+poker_vector <- c(140, -50, 20, -120, 240)
+to select the 2nd, 3rd and 5th element, you'll do poker_vector[c(2,3,5)]
+to select the 2nd, 3rd and 4th element, you can do either poker_vector[c(2,3,4)] or poker_vector[c(2:4)], as opposed to Python, 4 here is inclusive
+You can also select elements of a vector based off its *names*
+so poker_vector <- c(140, -50, 20, -120, 240)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+you can do poker_vector[c("Tuesday","Wednesday","Thursday")] to select the 2nd, 3rd and 4th element of the vector
+Vector subsetting is exactly similar to List subsetting in Python
+ie. vector[vector comparison_operand]
+
+In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns.
+Since you are only working with rows and columns, a matrix is called two-dimensional.
+
+matrix(1:9, byrow=TRUE, nrow = 3)
+Similar to Vectors, rows and columns can be named by "rownames()" and "colnames()" respectively
+Remember that if you want to follow this convention, you will have to *flatten* out vectors first and then convert
+the flattened Vector into a matrix.
+
+rowSums() can be used to calculate the sum of every row.
+colSums() can be used to calculate the sum of every column.
+You can add a column or multiple columns to a matrix with the cbind() function, which merges matrices and/or vectors together by columns
+example: cbind(matrix1, matrix2, matrix3....)
+Similarly, rbind() can be used to bind rows to matrices. example: rbind(matrix1, matrix2, ...)
+Matrix subsetting is similar to 2-d Lists subsetting in Python (except matrix[,2] in R instead of matrix[:,2] in Python)
+Similar to Vectors, Matrices operate element-wise, so M1 * M2, will multiply the two matrices element-wise
+For matrix multiplication, you can use M1 %*% M2!
