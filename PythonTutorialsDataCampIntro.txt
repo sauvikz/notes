@@ -52,3 +52,5 @@ For 2D array, element wise operations work similarly. eg, a = np.array([[1,2,3],
 b = np.array([[2,2,2],[3,3,3]]) (a+b)
 You can also multiply each element by a scalar; say c = [1.1, 3.4, 5.6] then a * c will multiply all rows with these numbers element wise.
 np.mean(), np.median(), np.corrcoef(x1,x2), np.std(), np.sum(), np.sort()
+np.__version__ for version and np.show_config
+In general, you can simply query the nbytes attribute for the total memory requirement of an array, and itemsize for the size of a single element in bytes.
