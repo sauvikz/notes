@@ -1,3 +1,4 @@
+Notes from https://www.learnenough.com/git-tutorial
 Steve Jobs: "Real artists ship"
 VCS: Version Control System
 GitHub: Repository hosting website
@@ -38,11 +39,11 @@ Four states of git:
 
 "git log": metadata including commit hash; Hash is often referred to as "SHA" meaning Secure Hash Algorithm
 
-echo "Hello World" > index.html will dump the output of echo "Hello World" on to index.html
+"echo "Hello World" > index.html" will dump the output of echo "Hello World" on to index.html
 
 git commit -a: Means commit *all* tracked changes in all the files of your repository. For the files that are untracked you'll have to first "git add" them
 
-To see the difference between staged changes and the previous version of the repo, use git diff --staged
+To see the difference between staged changes and the previous version of the repo, use "git diff --staged"
 
 To amend the last commit message: "git commit --amend"
 
