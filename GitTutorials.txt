@@ -15,8 +15,8 @@ $ "which git"
 
 "git config user.name" and "git config user.email" shows you the git username and email respectively
 
-git config --global user.name "Sauvik Dutta"
-git config --global user.email sauvikz@gmail.com
+git config --global user.name "Your Username"
+git config --global user.email Your e-mail (note that e-mail is without quotes)
 
 "vim ~/.gitconfig" to confirm this; Remember this always stays in your home directory ie. /Users/sauvikdutta/
 
