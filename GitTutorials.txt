@@ -53,6 +53,7 @@ To amend the last commit message: "git commit --amend"
 "git log -p" gives you detailed logs
 
 [website (master)]$ git remote add origin https://github.com/<name>/website.git
+Note: If you've added the wrong repo name, you can rectify that with "git remote set-url origin `name`"
 [website (master)]$ git push -u origin master
 
 The "-u" option to git push sets GitHub as the upstream repository, which means we’ll be able to download any changes automatically when we run "git pull"
